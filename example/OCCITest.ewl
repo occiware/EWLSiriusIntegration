@@ -1,0 +1,27 @@
+wizard CreateAssociationClassCase1 {
+
+guard : self.isKindOf(Collection) and
+self.size() = 2 and  self.forAll(s|s.isTypeOf(occi::Kind))
+
+title : 'Rename resource ' + self.at(0).Term + self.at(1).Term
+
+do {
+	
+	
+	var kind1 := self.at(0);
+	var kind2 := self.at(1);
+	var newName = UserInput.prompt("New Term for Kind " + kind1.Term);
+	kind1.Term := newName;
+	var newName1 = UserInput.prompt("New Term for Kind " + kind2.Term);
+	kind2.Term := newName1;
+	
+	//	var list : List;
+	//list.add('target1');
+	//list.add('target2');
+	//list.add('target3');
+	//var target := UserInput.choose('Select target', list, 'target2');
+	// See fig 3.15 of epsilon
+	}
+
+}
+
