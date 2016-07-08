@@ -1,0 +1,30 @@
+wizard ChangeScheme {
+
+	guard : self.isTypeOf(occi::Extension) 
+	
+	title : 'Changing scheme of the extension ' + self.name
+	
+	do {
+	 
+		
+		var newScheme = UserInput.prompt("New Scheme that will replace " + self.scheme);
+		self.scheme := newScheme;
+		for (kind in self.kinds) { 
+			kind.scheme := newScheme;
+		}
+		for (kind in self.kinds) { 
+			kind.scheme := newScheme;
+			for (action in kind.actions) { 
+				action.scheme := newScheme;		
+			}
+		}
+		for (mixin in self.mixins) { 
+			mixin.scheme := newScheme;		
+			for (action in mixin.actions) { 
+				action.scheme := newScheme;		
+			}
+		}
+	
+	}
+}
+
