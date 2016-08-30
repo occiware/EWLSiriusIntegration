@@ -1,4 +1,4 @@
-package org.occiware.siriusewl.integration;
+package org.eclipse.capella.ewl.integration;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -8,7 +8,7 @@ import org.osgi.framework.BundleContext;
  */
 public class Activator extends AbstractUIPlugin {
 
-	public static final String PLUGIN_ID = "org.occiware.siriusewl.integration"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.eclipse.capella.ewl.integration"; //$NON-NLS-1$
 
 	private static Activator plugin;
 	

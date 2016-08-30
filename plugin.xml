@@ -43,10 +43,32 @@
 	<objectContribution id="org.eclipse.epsilon.ewl.sirius" 
 	objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
 		<action class="org.eclipse.epsilon.ewl.sirius.ContributeSiriusWizardsAction" 
-		enablesFor="+" id="org.eclipse.epsilon.ewl.sirius.wizards" label="Wizards" state="true" style="pulldown">
+		enablesFor="+" id="org.eclipse.epsilon.ewl.sirius.wizards" label="Capella Wizards" state="true" style="pulldown">
 		</action>
 	</objectContribution>
+	<objectContribution id="org.eclipse.capella.kcvl" 
+	objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+		<action class="org.eclipse.epsilon.ewl.sirius.ContributeKCVLUriWizardAction" 
+		enablesFor="+" id="org.eclipse.capella.kcvl.wizards" label="KCVL" state="true" style="pulldown">
+		</action>
+	</objectContribution>
+	
 </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.capella.ewl.emf"
+            objectClass="org.eclipse.emf.ecore.EObject">
+         <action
+               class="org.eclipse.epsilon.ewl.sirius.ContributeEmfWizardsAction"
+               enablesFor="+"
+               id="org.capella.epsilon.ewl.emf.wizards"
+               label="CapellaWizards"
+               state="true"
+               style="pulldown">
+         </action>
+      </objectContribution>
+   </extension>
 <!--
 <extension point="org.eclipse.epsilon.common.dt.tool">
 <tool class="org.eclipse.epsilon.ewl.sirius.SiriusTool" defaultName="siriusTool">
