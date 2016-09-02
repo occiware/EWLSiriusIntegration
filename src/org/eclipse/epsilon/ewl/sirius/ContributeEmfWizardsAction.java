@@ -8,7 +8,7 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.epsilon.ewl.emf.AbstractContributeWizardsAction;
 import org.eclipse.epsilon.ewl.emf.WorkbenchPartRefresher;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.polarsys.capella.core.platform.sirius.ui.navigator.view.CapellaCommonNavigator;
+import org.eclipse.ui.navigator.CommonNavigator;
 
 public class ContributeEmfWizardsAction extends AbstractContributeWizardsAction	 {
 
@@ -18,9 +18,6 @@ public class ContributeEmfWizardsAction extends AbstractContributeWizardsAction	
 	}
 
 	protected EditingDomain getEditingDomain() {
-		System.out.println(targetPart);
-		
-		org.polarsys.capella.core.platform.sirius.ui.navigator.view.CapellaCommonNavigator part = (CapellaCommonNavigator) targetPart;
 	    TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(((IStructuredSelection) selection).getFirstElement());
 	    return domain;
 	}
@@ -43,7 +40,7 @@ public class ContributeEmfWizardsAction extends AbstractContributeWizardsAction	
 
 			@Override
 			public void refresh() {
-				CapellaCommonNavigator editor = (CapellaCommonNavigator) part;
+				CommonNavigator editor = (CommonNavigator) part;
 				editor.getCommonViewer().refresh();
 				
 			}
